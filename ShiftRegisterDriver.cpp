@@ -4,7 +4,6 @@
 #define LOAD_TIME_MSEC    (1)     // Delay to load data into shift register
 #define NUM_BITS          (8)     // 8-bit shift register
 #define READ_FREQ_HZ      (100)   // 100 Hz = 10 msec clk period
-#define HALL_SENSOR_MASK  (0x1)   // Bit 0 of [7:0] shift register read
 
 uint8_t read_shift_register() {
   float clock_period_msec = 1000.0f / READ_FREQ_HZ;
@@ -46,9 +45,5 @@ void print_shift_register(uint8_t reg_value) {
   for (int i=(NUM_BITS-1); i >= 0; i--) {        // Loop over each bit from MSB to LSB
     Serial.print((reg_value >> i) & 0x1);  // Extract and print each bit
   }
-
-  // Check if magnet is present
-  uint8_t mag_present = !(reg_value & HALL_SENSOR_MASK);
-  mag_present != 0 ? Serial.print(" : MAGNET") : Serial.print(" : NONE");
   Serial.println();
 }
