@@ -1,5 +1,6 @@
 #include "ShiftRegisterDriver.h"
 
+// Local macro definitions
 #define LOAD_TIME_MSEC    (1)     // Delay to load data into shift register
 #define NUM_BITS          (8)     // 8-bit shift register
 #define READ_FREQ_HZ      (100)   // 100 Hz = 10 msec clk period
