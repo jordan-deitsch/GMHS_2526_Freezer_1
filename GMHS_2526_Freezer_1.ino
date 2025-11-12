@@ -1,3 +1,17 @@
+/*
+ * @file   GMHS_2526_Freezer_1.ino
+ * @brief  Controller for freezer inventory system
+ * 
+ * Controller uses Hall sensors and shift registers
+ * to identify shelves with unique magnetic codes
+ * and perform related inventory
+ * 
+ * @author  Jordan Deitsch
+ * @date    2025-11-11
+ * @version 1.0
+ *
+ */
+
 #include "ShiftRegisterDriver.h"
 
 #define PIN_LED_OUT (13)
